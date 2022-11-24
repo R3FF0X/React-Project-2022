@@ -1,0 +1,22 @@
+@import "./settings";
+@import "./components/navigation";
+@import "./components/logo";
+@import "components/pokemons";
+@import "./components/card";
+@import "./components/loadingscreen";
+
+
+body{
+  background-image: url("../../src/assets/img/fond-mer-pkm.png");
+  background-size: 100%;
+  width: 100%;
+  height: 100%;
+  background-attachment: fixed;
+  #root{
+    h1{
+      font-family: "Lucida Console";
+      color: white;
+      text-transform: uppercase;
+    }
+  }
+}
