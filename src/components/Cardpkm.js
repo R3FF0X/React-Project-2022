@@ -4,9 +4,9 @@ import LoadingSreen from "./LoadingSreen";
 import Home from "../pages/Home";
 
 
-
 const Cardpkm = ({pokemon}) => {
     const [pkm, setPkm] = useState([]) ;
+    const [color, setCol] = useState([]) ;
 
 
     useEffect(()=>{
@@ -16,13 +16,11 @@ const Cardpkm = ({pokemon}) => {
                 setPkm(res.data)})
     }, [pokemon])
 
-
-
-
     const typeColor = { "normal" : "#a0a3a0", "fighting" : "#ff8100", "flying": "#82baef","poison" : "#923fcc","ground" : "#92501b","rock" : "#b1ab82","bug" : "#92a312","ghost" : "#713f71","steel" : "#60a3b9","fire" : "#e72324","water" : "#2481ef","grass" : "#3ca224","electric" : "#fac100","psychic" : "#ef3f7a","ice" : "#3dd9ff","dragon" : "#4f60e2","dark" : "#4d3e3b","fairy" : "#ef71ef","unknown" : "#67998c","shadow" : "#434349"};
 
 
     return (
+
 
 
             <div className="row">
@@ -32,19 +30,24 @@ const Cardpkm = ({pokemon}) => {
                                 <span className="card-title">{pokemon.name}
                                     {pkm.types &&
                                         pkm.types.map((type) => (
-                                            <img class="imgLogo" src="../../src/assets/img/logoType/water.png" width="100%" height="100%"/>
+                                            <p className=""
+                                               style={{background: typeColor[type.type.name]}}>{type.type.name}</p>
                                         ))
                                     }
 
                                 </span>
+
                             {pkm && pkm.sprites &&
                                 <img src={pkm.sprites.front_default} alt={pokemon.name}/>
                             }
-                            <img className="imgLogo" src="../assets/img/logoType/water.png" width="100%"
-                                 height="100%"/>
                         </div>
+
                         {pkm.types &&
-                            <div className="card-action" style={{background: typeColor[pkm.types[0].type.name]}}>
+
+                            <div className="card-action" style={{background: typeColor[pkm.types[0].type.name]}
+                            }>
+                                <a className="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a>
+
                                 {pkm.types &&
                                     pkm.types.map((type) => (
                                         <p style={{
@@ -59,7 +62,8 @@ const Cardpkm = ({pokemon}) => {
                     </div>
                 </div>
             </div>
-    );
+
+    )
 };
 
 export default Cardpkm;
