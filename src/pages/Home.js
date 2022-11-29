@@ -8,8 +8,6 @@ const Home = () => {
         <div>
             <Navigation />
             <h1> Page d'accueil</h1>
-
-            <img className="imgLogo" src={'./pokeball.png'}/>
         </div>
     );
 };
