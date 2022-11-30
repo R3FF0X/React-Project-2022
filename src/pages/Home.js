@@ -12,7 +12,7 @@ const Home = () => {
     return (
         <div>
             <Navigation />
-            <h1> Page d'accueil</h1>
+            <h1> Pokemon favoris :</h1>
             <Provider store={Store}>
                 <Favoris />
             </Provider>
