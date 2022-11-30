@@ -3,6 +3,8 @@
   width: 280px;
   &-title{
     text-transform: capitalize;
+    .checkFavoris{
+    }
     .types{
       img{
         height: auto;
@@ -22,6 +24,15 @@
 
   .card-action{
     text-align: center;
+    .test{
+      background-color: red;
+/*
+      [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+         position: relative !important;
+         opacity: 1 !important;
+         pointer-events: all !important;
+      }*/
+    }
     a:hover{
       color: black;
     }

@@ -1,6 +1,8 @@
 import React from 'react';
 import Navigation from '../components/Navigation';
 import Pokedex from "../components/Pokedex";
+import {Store} from "../components/Store";
+import {Provider} from "react-redux";
 
 
 
@@ -11,8 +13,9 @@ const Pokemon = () => {
             <Navigation />
             <h1>Pokedex</h1>
             <br/>
-
-            <Pokedex/>
+            <Provider store={Store}>
+                <Pokedex/>
+            </Provider>
             
             
 
