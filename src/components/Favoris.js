@@ -13,7 +13,7 @@ const Favoris = () => {
 
                 {store &&
                     store.map(t=>(
-                        <p>{t.payload}</p>
+                        <p style="color: white">- {t.payload}</p>
                     ))
                 }
             </div>
